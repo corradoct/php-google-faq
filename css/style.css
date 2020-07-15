@@ -1,3 +1,74 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* REGOLE GENERALI */
+a {
+  color: gray;
+  text-decoration: none;
+}
 ul {
   list-style-type: none;
+}
+.active a {
+  color: blue;
+}
+ul.menu {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+ul.menu li {
+  margin-right: 20px;
+}
+
+/* REGOLE HEADER */
+.wrapper header {
+  color: gray;
+  border-bottom: 1px solid gray;
+  padding: 20px;
+}
+.topHeader,
+.bottomHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bottomHeader {
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.logo {
+  margin-right: 20px;
+}
+
+/* REGOLE MAIN */
+.wrapperFaq {
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px 0;
+  color: gray;
+  line-height: 2em;
+}
+.wrapperFaq ul {
+  padding: 0;
+}
+.wrapperFaq h2 {
+  color: #000;
+}
+
+/* REGOLE FOOTER */
+footer {
+  background-color: lightgray;
+  padding: 20px 0;
+}
+.wrapperFooter {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

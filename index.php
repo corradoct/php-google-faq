@@ -1,7 +1,9 @@
 <?php
 
+// Genero l'array di array
+
 $faqs = [
-  $faq = [
+  [
     'question' => 'Come state implementando la recente decisione della Corte di giustizia dell\'Unione europea (CGUE) relativa al diritto all\'oblio?',
     'answer' => 'La recente decisione della Corte di giustizia dell\'Unione europea ha profonde conseguenze per i motori di ricerca in Europa.
                 La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati
@@ -25,7 +27,7 @@ $faqs = [
                 leggi europee per la protezione dei dati. Mostriamo questa notifica agli utenti europei quando cercano la maggior parte dei nomi, non soltanto le
                 pagine che sono state soggette a una rimozione.'
   ],
-  $faq = [
+  [
     'question' => 'Come fa Google a proteggere la mia privacy e a tenere le mie informazioni al sicuro?',
     'answer' => 'Sappiamo che la sicurezza e la privacy sono importanti per te e lo sono anche per noi. Per noi è imperativo offrire un\'elevata sicurezza e assicurarti
                 che le tue informazioni sono al sicuro e accessibili quando ne hai bisogno.
@@ -36,7 +38,7 @@ $faqs = [
                 Puoi leggere ulteriori informazioni sulla sicurezza online, incluso come proteggere te e la tua famiglia online, nel Centro Google per la sicurezza online.
                 Scopri quali misure adottiamo per garantire protezione e sicurezza alle tue informazioni personali, lasciando a te il controllo.'
   ],
-  $faq = [
+  [
     'question' => 'Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?',
     'answer' => 'I risultati di ricerca di Google rispecchiano i contenuti pubblicamente disponibili sul Web. I motori di ricerca non possono rimuovere i contenuti
                 direttamente dai siti web, quindi rimuovere risultati di ricerca da Google non consente di rimuovere i contenuti dal Web. Se desideri rimuovere qualcosa dal Web,
@@ -45,7 +47,7 @@ $faqs = [
                 che i contenuti saranno stati rimossi e che Google avrà rilevato l\'aggiornamento, le informazioni non verranno più visualizzate nei risultati di ricerca di Google.
                 In caso di una richiesta di rimozione urgente, è inoltre possibile visitare la nostra pagina di assistenza per avere ulteriori informazioni.'
   ],
-  $faq = [
+  [
     'question' => 'Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?',
     'answer' => 'In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione
                 anche l\'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di URL referrer. Talvolta, l\'URL della pagina dei risultati di
@@ -59,26 +61,149 @@ $faqs = [
 
 ?>
 
+<!-- Genero l'html -->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Google Faq</title>
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
 
-    <div class="">
-      <ul>
-        <?php for ($i=0; $i < count($faqs); $i++) { ?>
-          <?php $thisFaq = $faqs[$i]; ?>
-          <li>
-            <h2><?php echo $thisFaq['question']; ?></h2>
-            <p><?php echo $thisFaq['answer']; ?></p>
-          </li>
-        <?php } ?>
-      </ul>
+    <!-- Wrapper generale -->
+    <div class="wrapper">
+
+      <!-- Header -->
+      <header>
+
+        <!-- Top header -->
+        <div class="topHeader">
+
+          <!-- Logo -->
+          <div class="logo">
+            <a href="#">
+              <img src="../img/googlelogo_color_74x24dp.png" alt="Logo Google">
+            </a>
+          </div>
+          <!-- Fine logo -->
+
+          <!-- Pagina corrente -->
+          <div class="currentPage">
+            <a href="#">
+              <h3>Privacy e termini</h3>
+            </a>
+          </div>
+          <!-- Fine pagina corrente -->
+
+        </div>
+        <!-- Fine top header -->
+
+        <!-- Bottom header -->
+        <div class="bottomHeader">
+
+          <!-- Menu -->
+          <div class="wrapperMenu">
+            <ul class="menu">
+              <li>
+                <a href="#">Introduzione</a>
+              </li>
+              <li>
+                <a href="#">Norme sulla privacy</a>
+              </li>
+              <li>
+                <a href="#">Termini di servizio</a>
+              </li>
+              <li>
+                <a href="#">Tecnologie</a>
+              </li>
+              <li class="active" >
+                <a href="#">Domande frequenti</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Fine menu -->
+
+          <!-- Profilo utente -->
+          <div class="wrapperUser">
+            <a href="#">user@gmail.com</a>
+          </div>
+          <!-- Fine profilo utente -->
+
+        </div>
+        <!-- Fine bottom header -->
+
+      </header>
+      <!-- Fine header -->
+
+      <!-- Main -->
+      <main>
+
+        <!-- Sezione lista domande e risposte -->
+        <div class="wrapperFaq">
+          <ul>
+            <!-- Ciclo l'array che contiene le domande e le risposte -->
+            <?php for ($i=0; $i < count($faqs); $i++) { ?>
+              <!-- Seleziono la singola domanda e risposta -->
+              <?php $thisFaq = $faqs[$i]; ?>
+              <li>
+                <!-- Stampo a video la domanda -->
+                <h2><?php echo $thisFaq['question']; ?></h2>
+                <!-- Stampo a video la risposta -->
+                <p><?php echo $thisFaq['answer']; ?></p>
+              </li>
+              <!-- Chiudo il ciclo for -->
+            <?php } ?>
+          </ul>
+        </div>
+        <!-- Fine sezione lista domande e risposte -->
+
+      </main>
+      <!-- Fine main -->
+
+      <!-- Footer -->
+      <footer>
+
+        <!-- Wrapper footer -->
+        <div class="wrapperFooter">
+
+          <!-- Wrapper footer menu -->
+          <div class="wrapperFooterMenu">
+            <ul class="menu">
+              <li>
+                <a href="#">Google</a>
+              </li>
+              <li>
+                <a href="#">Tutto su Google</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Termini</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Fine wrapper footer menu -->
+
+          <!-- Selezione lingua -->
+          <div class="language">
+            <select class="" name="">
+              <option value="">Italiano</option>
+              <option value="">Inglese</option>
+            </select>
+          </div>
+          <!-- Fine selezione lingua -->
+
+        </div>
+        <!-- Fine wrapper footer -->
+
+      </footer>
+      <!-- Fine footer -->
+
     </div>
+    <!-- Fine wrapper generale -->
 
   </body>
 </html>
